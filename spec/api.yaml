@@ -1,0 +1,119 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https:latest_api
+  - description: Flask API for Sentiment Analysis
+    url: http://localhost:5000/sentimentanalysis/api/text/v1.0
+info:
+  description: The API provides endpoints for sentiment analysis on text data using a model trained with IMDB movie ratings data
+  version: "1.0.0"
+  title: Sentiment Analysis API
+  contact:
+    email: rajesh.nayak1106@gmail.com
+  license:
+    name: ''
+    url: ''
+paths:
+  /singleinput:
+    post:
+      tags:
+        - singleinput
+      summary: ''
+      description: Accepts a single line or paragraph without line break
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {
+                          "input": "The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are. They are frank in admitting this and are willing to pay for such talents",
+                          "result": "Positive",
+                          "score": "0.7219006"
+                        }
+        '400':
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {
+                          "error": "invalid input",
+                          "input": "112222222",
+                          "message": "Please provide valid text",
+                          "result": "",
+                          "score": null
+                      }
+      requestBody:
+        required: true
+        content:
+          plain/text:
+            schema:
+              type: string
+              example: The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are. They are frank in admitting this and are willing to pay for such talents
+        description: Text to be analysed
+  /listinput:
+    post:
+      tags:
+        - listinput
+      summary: ''
+      description: This endpoint accepts a list of sentences or paragraphs. The list separator is line break or new line character. It returns a JSON object with a list . The list contains sentiment analysis result and score of each line/paragraph and also the result and score of the whole list
+      responses:
+        '200':
+          description: 'Success'
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {
+                          "results": [
+                              {
+                                  "input": "The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are. They are frank in admitting this and are willing to pay for such talents",
+                                  "score": "0.7219006",
+                                  "result": "Positive"
+                              },
+                              {
+                                  "input": "The greatest leader is not necessarily the one who does the greatest things. He is the one that gets people to do the greatest things",
+                                  "score": "2.9278162",
+                                  "result": "Positive"
+                              },
+                              {
+                                  "input": "Victory has a hundred fathers and defeat is an orphan",
+                                  "score": "0.04653979",
+                                  "result": "Positive"
+                              },
+                              {
+                                  "combined_text": "The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are. They are frank in admitting this and are willing to pay for such talents The greatest leader is not necessarily the one who does the greatest things. He is the one that gets people to do the greatest things Victory has a hundred fathers and defeat is an orphan",
+                                  "combined_score": "3.8861713",
+                                  "combined_result": "Positive"
+                              }
+                          ]
+                      }
+        '400':
+          description: 'Bad request'
+          content:
+            application/json:
+              schema:
+                type: string
+                example: {
+                          "error": "invalid input",
+                          "input": "112222222",
+                          "message": "Please provide valid text",
+                          "result": "",
+                          "score": null
+                      }
+      requestBody:
+        required: true
+        content:
+          plain/text:
+            schema:
+              type: string
+              example: The best leaders are those most interested in surrounding themselves with assistants and associates smarter than they are. They are frank in admitting this and are willing to pay for such talents
+              
+                  The greatest leader is not necessarily the one who does the greatest things. He is the one that gets people to do the greatest things
+                  
+                  Victory has a hundred fathers and defeat is an orphan
+        description: Text to be analysed
