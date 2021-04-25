@@ -80,10 +80,10 @@ Before starting you need to have [Python](https://www.python.org/) installed.
 
 ```bash
 # Clone this project
-$ git clone https://github.com/rajeshnayak1106/sentiment-analysis-api
+$ git clone https://github.com/rajeshnayak1106/sentiment_analysis_api
 
 # Access
-$ cd sentiment-analysis-api
+$ cd sentiment_analysis_api
 
 # Install dependencies
 $ pip install -r requirements.txt
