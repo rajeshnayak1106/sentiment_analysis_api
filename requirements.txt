@@ -1,0 +1,5 @@
+tensorflow==2.5.0rc1
+tensorflow_datasets==4.2.0
+numpy==1.19.5
+flask==1.1.2
+pytest==6.2.2
