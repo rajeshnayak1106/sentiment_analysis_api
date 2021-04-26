@@ -8,7 +8,7 @@ import json
 def configure_routes(app):
 
     # load the model and get a refrence
-    model = load_model('accenture_test_model')
+    model = load_model('pretrained_test_model')
 
     # fucntuon to get the prediction score
     def get_prediction_score(text_list):
@@ -136,9 +136,13 @@ def configure_routes(app):
                 'combined_result': overall_result,
             }
 
-            response_object_list.append(response_object_list_item)
+            # response_object_list.append(response_object_list_item)
 
-            response_object = json.dumps({'results': response_object_list})
+            response_object = json.dumps({
+                'results': {
+                    'each_item': response_object_list
+                }, 'combined': response_object_list_item
+            })
             response_code = 200
 
         else:
