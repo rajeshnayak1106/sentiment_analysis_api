@@ -55,10 +55,17 @@ There 2 API endpoints for multiple needs.
 <b> /singleinput </b>
 <br>
 Accepts a single sentences/paragraph without line break and returns prediction score and sentiment analysis result in JSON format along with the text which was sent for analysis
+<br
+
+     - input : text/plain
+     - output : application/json
 <br>
 <b> /listinput </b>
 <br>
 Accepts a list of sentences/paragraphs and returns prediction score and sentiment analysis result in JSON format for each sentences/paragraph in the list and also the overall list.
+
+     - input : text/plain
+     - output : application/json
 
 For better understanding please refer to the SwaggerHub link below
 
@@ -68,8 +75,10 @@ https://app.swaggerhub.com/apis/Personal8618/sentiment_analysis_api/1.0.0
 
 The following technologies are used in this project:
 
+- [Tensorflow](https://www.tensorflow.org/)
 - [Python](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+- [Pytest](https://docs.pytest.org/en/6.2.x/)
 - [Docker](https://www.docker.com/)
 
 ## Requirements
