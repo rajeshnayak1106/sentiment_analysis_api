@@ -89,7 +89,7 @@ Before starting you need to have [Python](https://www.python.org/) installed.
 
 ```bash
 # Clone this project
-$ git clone https://github.com/rajeshnayak1106/sentiment_analysis_api
+$ git clone https://github.com/rajeshnayak1106/sentiment_analysis_api.git
 
 # Access
 $ cd sentiment_analysis_api
