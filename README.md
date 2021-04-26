@@ -41,11 +41,11 @@
 The Flask application provides two different endpoints for sentiment analysis of text data. One of that APIS takes a single sentence/paragraph and other one that takes a list of sentences/paragraphs. Based on assumptions line break/new line is takes as the list separator. The API uses a pre-trained sentiment analysis model to predict sentiment score. Based on the rules provided in the model classification document, if the prediction score is >= 0.0 then result is positive else negative. The API uses REST methodology and us written using Flask framework. There are many benefits of using REST format which benefits this API requirements such as
 
 <br>
-Ease of implementation : This API is very simple in nature  hence REST is best option 
+ * Ease of implementation : This API is very simple in nature  hence REST is best option 
 <br>
-Supports JSON hence lightweight on network : There is no limitation in the lengths of text hence JSON would be the better format to transfer data over network as its semi-structured and also lightweight
+* Supports JSON hence lightweight on network : There is no limitation in the lengths of text hence JSON would be the better format to transfer data over network as its semi-structured and also lightweight
  <br>
-Stateless : Each request to the endpoints need to be isolated from each other an the server side does not need to store the state of the request sent via the endpoints
+* Stateless : Each request to the endpoints need to be isolated from each other an the server side does not need to store the state of the request sent via the endpoints
  <br>
 
 ## API Documentation
@@ -80,10 +80,10 @@ Before starting you need to have [Python](https://www.python.org/) installed.
 
 ```bash
 # Clone this project
-$ git clone https://github.com/rajeshnayak1106/sentiment-analysis-api
+$ git clone https://github.com/rajeshnayak1106/sentiment_analysis_api
 
 # Access
-$ cd sentiment-analysis-api
+$ cd sentiment_analysis_api
 
 # Install dependencies
 $ pip install -r requirements.txt
