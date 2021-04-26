@@ -25,6 +25,12 @@ def configure_routes(app):
     # api endpoint configuration to handle single sentence/paragrap
     @app.route('/sentimentanalysis/api/text/v1.0/singleinput', methods=['POST'])
     def single_line_endpoint():
+        """Gets sentiment prediction score and result for single line input
+        :param text: Text to be analysed
+        :type text: str
+        :returns: a JSON object
+        :rtype: json
+        """
 
         response_object = None
         response_code = None
@@ -32,7 +38,7 @@ def configure_routes(app):
         # capture data from the POST request
         text = request.data.decode('UTF-8')
 
-        # validate input is not a list
+       # validate input is not a list
         if check_for_multine(text):
 
             response_object = jsonify(
@@ -84,6 +90,12 @@ def configure_routes(app):
 
     @app.route('/sentimentanalysis/api/text/v1.0/listinput', methods=['POST'])
     def list_line_endpoint():
+        """Gets sentiment prediction score and result for single line input
+        :param text: Text to be analysed
+        :type text: str
+        :returns: a JSON object with list object and JSON object
+        :rtype: json
+        """
 
         response_object = None
         response_code = None
