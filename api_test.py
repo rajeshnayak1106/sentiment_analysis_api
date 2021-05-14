@@ -59,7 +59,7 @@ def test_post_list_records_route__response_structure():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = 'http://localhost:5000//sentimentanalysis/api/text/v1.0/listinput'
+    url = 'http://localhost:5000/sentimentanalysis/api/text/v1.0/listinput'
 
     mock_request_headers = {
         'Content-Type': 'text/plain'
@@ -115,7 +115,7 @@ def test_post_list_route_blank_text__failure__bad_request():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = 'http://localhost:5000//sentimentanalysis/api/text/v1.0/listinput'
+    url = 'http://localhost:5000/sentimentanalysis/api/text/v1.0/listinput'
 
     mock_request_headers = {
         'Content-Type': 'text/plain'
